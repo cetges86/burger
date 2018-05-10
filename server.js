@@ -1,5 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 var PORT = process.env.PORT || 8080;
 
@@ -17,11 +18,15 @@ app.use(bodyParser.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main",
+layoutsDir: path.join(__dirname, "app/views/layouts") }));
+
 app.set("view engine", "handlebars");
+app.set('views', path.join(__dirname, "/app/views"));
+console.log(path.join(__dirname, "/app/views"));
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/catsController.js");
+var routes = require("./app/controllers/burger_controller.js");
 
 app.use(routes);
 
