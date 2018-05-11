@@ -16,6 +16,11 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/app/public/assets/css/burger_style.css", function(req, res){
+    res.sendFile(process.cwd() + "/app/public/assets/css/" + "burger_style.css");
+  });
+
+
 router.post("/api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
