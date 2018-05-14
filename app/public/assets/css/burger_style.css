@@ -1,12 +1,28 @@
 body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color:rgb(211, 214, 16);
-    font-family: "Roboto"
 }
 
 .jumbotron {
     opacity: .8;
 }
 
+h3 {
+    font-family: cursive;
+    margin-top: 5%;
+}
+
+form {
+    margin-bottom: 5%;
+}
+
 img {
     display: block !important;
+    height:500px;
+    margin: 0 auto;
+    border-radius: 20%;
+}
+
+.eat {
+    border-radius: 25%;
 }

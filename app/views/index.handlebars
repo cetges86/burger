@@ -1,35 +1,48 @@
 <div class="jumbotron">
   <h1 class="text-center">Burger Time!</h1>
-  <img src="../../app/public/assets/img/burger.jpg" alt="">
+  <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/impossible-burger-1523482169.jpg?crop=1.00xw:0.748xh;0,0.156xh&resize=768:*"
+    alt="">
+
+  <h3 class="text-center">When Burgers are Life</h3>
 </div>
 
-<h2>Burgers yet to be eaten!</h2>
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
+  <h2>Add a Burger to Scarf</h2>
+  <form class="create-form">
 
-<h2>Burgers you have scarfed already!</h2>
+    <div class="form-group">
+      <label for="burg">Burger Name:</label>
+      <input type="text" id="burg" name="burger_name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+  </form>
+
+  <div class="row">
+    <div class="col">
+
+      <h2>Burgers yet to be eaten!</h2>
+      <ul>
+        {{#each burgers}}
+         {{#unless devoured}} 
+            {{> burgers/burger-block devoured=true}} 
+         {{/unless}} 
+         {{/each}}
+      </ul>
+    </div>
 
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <div class="col">
+    <h2>Burgers you already ate. I'm sure they were delicious.</h2>
 
-<h2>Add a Burger to Scarf</h2>
-<form class="create-form">
+      <ul>
+        {{#each burgers}} 
+         {{#if devoured}} 
+            {{> burgers/burger-block devoured=false}} 
+         {{/if}} 
+        {{/each}}
+      </ul>
+    </div>
 
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="burger_name">
   </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+</div>
